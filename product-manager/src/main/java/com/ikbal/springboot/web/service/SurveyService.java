@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.service;
+package com.ikbal.springboot.web.service;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
@@ -8,8 +8,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.in28minutes.springboot.model.Question;
-import com.in28minutes.springboot.model.Survey;
+import com.ikbal.springboot.web.model.Question;
+import com.ikbal.springboot.web.model.Survey;
 
 @Component
 public class SurveyService {

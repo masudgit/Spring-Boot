@@ -1,8 +1,10 @@
-package com.in28minutes.springboot;
+package com.ikbal.springboot.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.ikbal.springboot.web.service.WelcomeService;
 
 @RestController
 public class WelcomeController {

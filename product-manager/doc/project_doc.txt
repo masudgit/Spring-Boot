@@ -1,10 +1,11 @@
 Reference link: https://www.codejava.net/frameworks/spring/spring-boot/spring-boot-crud-example-with-spring-mvc-spring-data-jpa-thymeleaf-hibernate-mysql
 
+#Maria DB, HeidiSQL
 #Technologies:
 Spring Boot: enables rapid application development with sensible defaults to reduce boilerplate code. Spring Boot also helps us create a standalone, executable Java web application with ease.
 Spring MVC: simplifies coding the controller layer. No more boilerplate code of Java Servlet classes.
 Spring Data JPA: simplifies coding the data access layer. No more boilerplate code of DAO classes.
-Hibernate: is used as an ORM framework – implementation of JPA. No more boilerplate JDBC code.
+Hibernate: is used as an ORM framework ï¿½ implementation of JPA. No more boilerplate JDBC code.
 ThymeLeaf: simplifies coding the view layer. No more cluttered JSP and JSTL tags.
 And MySQL as the database.
 

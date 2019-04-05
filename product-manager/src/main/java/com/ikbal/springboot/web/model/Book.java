@@ -1,4 +1,4 @@
-package com.ikbal.in28minutes;
+package com.ikbal.springboot.web.model;
 
 public class Book {
 	long id;
