@@ -1,0 +1,141 @@
+
+##www.start.spring.io
+Artifact: pacakge
+Group: projectName
+Dependencies: Web starter(for rest)
+
+~Import existing maven project from eclipse.
+~Spring boot is to develop micro services.
+~Auto Configuration:
+ 
+~@SpringBootApplication
+ i)Indicates that its a spring context file. 
+ ii)It enables auto-configuration.
+ iii)It enables automatic component scan of this package. [it start scanning classes of this packages for any bean.]
+  e.g: BooksController will be registered as bean and would be managed by the framework.
+
+~SpringApplication.run:
+ It is used to run Spring context.....
+  
+~Auto Configuration: [How does auto configuration works]
+ www.springboottutorial.com 
+	a)Framwework available on the CLASSPATH.
+	b)Existing(Beans which are) configuration for the application. Based on these,
+	Spring Boot provides basic configuration needed to configure the application  with these 
+	frameworks. (internationlization, messaging, )
+
+Debugging Auto Configuration:	
+~There are two ways, we can debug and find more information about auto configuration:
+ . Turning on debug logging
+ . Using Spring boot Actuator.
+Note: IT tells why beans are not getting created.  
+ 
+application.properties:
+ logging.level.org.springframework = DEBUG 
+ 
+ ApplicationContext context  = 
+ for(String name: context.getBean)
+ 
+#Spring: is DI. we can develop loosely coupled applications. Loosely couple application can be easily unit tested.
+We let Spring Framwework by two annotaions:
+ i)@Component : We tell spring fm, hey there, is a bean that you need to manage.
+ ii)@Autowired: we tell spring fm, hey find the correct match for this specific type and autowire it .
+
+Problems 1:Duplication Code.
+	It builds on the core concept of Depedency Injection with a number of Spring modules:
+	.Spring JDBC
+	.Spring MVC
+	. AOP
+	.ORM
+	.JMS
+	.Test
+
+Problems 2: Good integration with Other frameworks.
+ .Hibernate for ORM
+ .iBatis for Object Mapping
+ .JUnit and Mockito for UNit testing.
+ 
+
+#Spring MVC: Provides simplest way of developing web applications. It has separation of concern. 
+Dispatcher Servlet(is concern with basic front controller), ModelAndView and View Resolver(Resolving a view name to the physical view), 
+it makes it easy to develop web applications as well as REST applications. 
+	
+#Spring Boot Starter JPA:
+~JPA is an interface for hibernate. Defines how orm framework should work.
+~Spring boot data jpa defines, hibernate as the default orm framework. 
+
+#Spring-boot-starter-security:
+Authentication and Authorization using Spring security. It supports both Basic and OAuth2 authentication.
+
+#Spring-boot-starter-data-rest: 
+Expose entities as rest-ful web services. They exposes rest-ful methods, get, post, put, delete.
+
+
+#Spring Boot Starter
+~open pom.xml and hover on starter. go to the open pom.xml file to see the dependencies defined for this started, those are automatically configured.
+~Everything inherits from it. Anything that we used in spring boot, it inherits from spring-boot-starter.
+#Spring-boot-starter-test:
+It enables us to unit test as well as integration test.
+Starter for testing Spring Boot applications with libraries including
+		JUnit, Hamcrest and Mockito
+		
+#Spring Boot Actuator: [Provides production ready features to help you monitor and manage your application] [spring-boot-starter-actuator]
+~to enable monitor our application.
+~It read all of metadata of our application. e.g: all Beans, how auto configuration has worked, how many time specific service called, run/fail,
+ it exposes a lot of rest web-services. The Rest services are standard with HAL standard. We will use HAL browser. 
+~e.g: How many times a particular service has called
+      How many times a particular service has failed
+      To Check a appliaction is running or not. 
+ 
+ 
+#Spring Boot Starter: 
+ spring-boot-starter-web
+ spring-boot-starter-actuator
+ spring-data-rest-hal-browser
+ 
+ 
+ ~To disable authentication: 
+	application.properties
+		management.security.enabled=false
+~all application properties can be configured through application.properties.
+~trace: show detail for the last few request.debugging.
+~metrices: how many time services are being called, 
+~mappings: URLS that are mapped.
+/error: is the default handing, that spring boot provides, through auto configuration.
+##Spring boot developer tools: [spring-boot-devtools]
+ Loaded automatically
+ Dependency jar not being loaded, rather application classes are loaded during auto-restart by spring-boot. 
+
+
+#Spring Boot: Auto configuration. 
+#Spring MVC:  Concerned with developing web applications. Separtion of concern. Dispatcher Servlet, ModelAndView, and ViewResolver. (Rest)
+   
+# Goal:
+1) Enable building production ready applications quickly
+2) Provide common non-functional features.
+  -embedded servers
+  -metrics
+  -health checks
+  -externalized configuration
+  
+ #Features:
+ i) Quick Starter Projects with Auto Configuration:  e.g:  -Web -JPA
+   ->Spring Boot Starter Web[Web application and RestFul web services]: dependency added as web ,during start.spring.io. 
+     Includes, Spring Core, Spring MVC, Validation Framework, Logging Framework
+   ->Spring Boot Starter JPA
+     Includes, Hibernate and auto-configuration.   
+   
+ii)Embedded Servers - Tomcat, Jetty or Undertow
+   ->We can include tomcat along with my application jar. No need to install.
+iii)Production-ready features:
+  -metrics and health: through Spring boot actuator.       
+  -externalized configuration: The configuration of application various between different environment(iut,dev,production,different profile).
+     
+#Links:
+http://www.springboottutorial.com/spring-boot-auto-configuration     
+http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/    
+     
+#Spring DEV Tools:
+~Doesn't re-load maven dependencies.
+~Only re-load application bean.     
