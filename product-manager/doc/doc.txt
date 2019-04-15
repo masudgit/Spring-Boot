@@ -135,6 +135,7 @@ iii)Production-ready features:
 http://www.springboottutorial.com/spring-boot-auto-configuration     
 http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/    
+www.codejava.net     
      
 #Spring DEV Tools:
 ~Doesn't re-load maven dependencies.
