@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+	<changeSet author="maurizio natalia" id="c1">
+
+		<createTable tableName="students">
+
+			<column autoIncrement="true" name="id" type="bigint">
+				<constraints primaryKey="true" primaryKeyName="pk_student" />
+			</column>
+
+			<column name="fullname" type="varchar(255)">
+				<constraints nullable="false" />
+			</column>
+
+		</createTable>
+
+		<createTable tableName="exams">
+
+			<column autoIncrement="true" name="id" type="bigint">
+				<constraints primaryKey="true" primaryKeyName="pk_exam" />
+			</column>
+
+			<column name="name" type="varchar(255)">
+				<constraints nullable="false" unique="true" />
+			</column>
+			<column name="mark" type="smallint" />
+			<column name="student_id" type="bigint" />
+
+		</createTable>
+
+		<addForeignKeyConstraint constraintName="fk_student_exam"
+			baseTableName="exams" baseColumnNames="student_id"
+			referencedTableName="students" referencedColumnNames="id" />
+
+	</changeSet>
+
+</databaseChangeLog>

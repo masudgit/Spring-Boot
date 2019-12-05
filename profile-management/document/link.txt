@@ -1,4 +1,5 @@
 https://www.baeldung.com/spring-jasper
 https://github.com/juliuskrah/jasper-html-mail/tree/jasper-rest
 https://juliuskrah.com/blog/2018/04/30/sping-pdf-rest-api-with-jasperreports/
+https://www.baeldung.com/spring-request-param
 

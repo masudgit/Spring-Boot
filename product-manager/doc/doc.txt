@@ -137,6 +137,16 @@ http://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/    
 www.codejava.net     
      
+#Flyway:
+Flyway tries to read database migration scripts from classpath:db/migration folder by default.
+
+mvn install:install-file -Dfile=path/to/your/ojdbc6.jar -DgroupId=com.oracle 
+	-DartifactId=ojdbc6 -Dversion=11.2.0.4 -Dpackaging=jar
+
+#Liquibase:
+Notice how with MariaDB, allowMultiQueries=true option is needed to successfully execute multiple queries.
+Links: https://itnext.io/springboot-liquibase-and-mariadb-b3f943c29370
+     
 #Spring DEV Tools:
 ~Doesn't re-load maven dependencies.
 ~Only re-load application bean.     

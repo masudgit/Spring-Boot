@@ -19,6 +19,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -63,13 +64,14 @@ public class DownloadFileRestController {
 
 	@RequestMapping(value = "hello", method = RequestMethod.GET)
 	@ResponseBody
-	public void getReport(HttpServletResponse response) throws JRException, IOException {
+	public void getReport(@RequestParam(name = "id") String id, @RequestParam(name = "date") String date, HttpServletResponse response) throws JRException, IOException {
+		System.out.println(id+ " " + date );
 		InputStream jasperStream = this.getClass().getResourceAsStream("/jasperreports/HelloWorld.jasper");
 		Map<String, Object> params = new HashMap<>();
 		JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
 		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, new JREmptyDataSource());
 
-		response.setContentType("application/x-pdf");
+		response.setContentType("application/pdf");
 		response.setHeader("Content-disposition", "inline; filename=helloWorldReport.pdf");
 
 		final OutputStream outStream = response.getOutputStream();
