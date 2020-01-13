@@ -149,4 +149,8 @@ Links: https://itnext.io/springboot-liquibase-and-mariadb-b3f943c29370
      
 #Spring DEV Tools:
 ~Doesn't re-load maven dependencies.
-~Only re-load application bean.     
+~Only re-load application bean. 
+
+#CORS:
+https://howtodoinjava.com/spring5/webmvc/spring-mvc-cors-configuration/
+    
