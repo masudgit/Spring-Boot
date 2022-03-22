@@ -18,6 +18,7 @@ public class UserService {
 	
 	/*
 	 Bean is method level annotation.
+	 https://stackoverflow.com/questions/34172888/difference-between-bean-and-autowired
 	 */
 	@Bean
 	 public BCryptPasswordEncoder passwordEncoders() {

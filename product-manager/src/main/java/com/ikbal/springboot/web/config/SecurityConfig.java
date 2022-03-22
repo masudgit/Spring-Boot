@@ -44,18 +44,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     }
     */
 	
-	/* The UserDetailsService is a core interface in Spring Security framework,
-    which is used to retrieve the user’s authentication and authorization information.
-   This interface has only one method named loadUserByUsername() which we can
-   implement to feed the customer information to the Spring security API*/
+	/* 
+	The UserDetailsService is a core interface in Spring Security framework, 
+	which is used to retrieve the user’s authentication and authorization information.
+    This interface has only one method named loadUserByUsername() which we can
+    implement to feed the customer information to the Spring security API
+    */
    /*
-   * Here UserDetails is container for core user information. According to docs,
-   * its implementations are not used directly
-   * by Spring Security for security purposes. They simply store user information
-   *  which is later encapsulated into Authentication objects. This allows non-security
-   * related user information (such as email addresses, telephone numbers etc) to be stored in
-   * a convenient location. A very good sample implementation can be like User class.
-   * Provides core user information.*/
+   * Here UserDetails is container for core user information. 
+   * According to docs, its implementations are not used directly by Spring Security for security purposes. 
+   * They simply store user information which is later encapsulated into Authentication objects. 
+   * This allows non-security related user information (such as email addresses, telephone numbers etc) to be 
+   * stored in a convenient location. A very good sample implementation can be like User class.
+   * Provides core user information.
+   */
 	
 	@Bean
 	public UserDetailsService userDetailService() {
@@ -75,9 +77,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		return authProvider;
 	}
 	
-	 /* Spring Security also has a number of helper classes, which you can set up using AuthenticationManager.
-	 One helper class is the AuthenticationManagerBuilder.
-	Using this class, it's quite easy to set up the UserDetailsService against a database*/
+	 /* 
+	  * Spring Security also has a number of helper classes, which you can set up using AuthenticationManager.
+	 	One helper class is the AuthenticationManagerBuilder.
+		Using this class, it's quite easy to set up the UserDetailsService against a database*/
 	/*AuthenticationProvider provides a mechanism for getting the user details with which authentication can be performed.*/
 	
 	@Override
