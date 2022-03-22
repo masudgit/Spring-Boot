@@ -153,4 +153,9 @@ Links: https://itnext.io/springboot-liquibase-and-mariadb-b3f943c29370
 
 #CORS:
 https://howtodoinjava.com/spring5/webmvc/spring-mvc-cors-configuration/
+
+#Spring Transactional:
+https://medium.com/geekculture/spring-transactional-rollback-handling-741fcad043c6#:~:text=In%20Spring%20Boot%2C%20when%20%40Transactional,changes%20if%20an%20exception%20occurred.
+
+
     
